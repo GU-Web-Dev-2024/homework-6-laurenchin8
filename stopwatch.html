@@ -39,7 +39,7 @@
                 padding: "10px",
                 "border-radius": "5px",
                 "font-size": "medium",
-                "text-align": center
+                "text-align": "center"
             });
 
             // Add classes to buttons
@@ -53,9 +53,10 @@
                 "color": "white",               // White text
                 "border": "none",               // No border
                 "padding": "10px 20px",        // Padding
-                "text-align": "center",         // Center text
+                "textAlign": "center",         // Center text
                 "text-decoration": "none",      // No underline
-                "display": "inline-block",      // Inline block display
+                "display": "flex",              // Use flexbox for buttons 
+                "justify-content": "center",    // Center buttons horizontally
                 "font-size": "16px",            // Font size
                 "margin": "4px 2px",           // Margin
                 "border-radius": "5px",        // Rounded corners
@@ -138,6 +139,20 @@
                     $appendSeconds.html(seconds);
                 }
             }
+
+            // css for wrapper and .button-container class flex box
+            $(".wrapper").css({
+                "display": "flex",
+                "flex-direction": "column",
+                "align-items": "center", // Center items horizontally
+                "justify-content": "center" // Center items vertically
+            });
+            
+            $(".button-container").css({
+                // Button container flex box
+                "display": "flex", 
+                "justify-content": "center"
+            });
         });
         // }
 
@@ -149,9 +164,11 @@
         <h1>Stopwatch</h1>
         <h2>Vanilla JavaScript Stopwatch</h2>
         <p><span id="seconds">00</span>:<span id="tens">00</span></p>
-        <button id="button-start">Start</button>
-        <button id="button-stop">Stop</button>
-        <button id="button-reset">Reset</button>
+        <div class="button-container">
+            <button id="button-start">Start</button>
+            <button id="button-stop">Stop</button>
+            <button id="button-reset">Reset</button>
+        </div>
     </div>
 </body>
 
