@@ -31,6 +31,17 @@
 
             var interval;
 
+            // Add ID to the timer paragraph and add class using jQuery
+            $("p").attr("id", "timer").addClass("timer-background");
+            // Then editing style
+            $("#timer").css({
+                "background-color": "#f0f0f0", /* Example background color */
+                padding: "10px",
+                "border-radius": "5px",
+                "font-size": "medium",
+                "text-align": center
+            });
+
             // changing to use jQuery method
             $buttonStart.on("click", start);
 
