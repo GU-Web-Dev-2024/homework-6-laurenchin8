@@ -47,6 +47,7 @@
 
             function start() {
                 clearInterval(interval);
+                $("#timer").css("background-color", "rgb(51, 165, 50)"); // Running color
                 interval = setInterval(startTimer, 10);
             }
             // buttonStart.onclick = function () {
@@ -59,6 +60,9 @@
 
             function stop() {
                 clearInterval(interval);
+                if (tens !== "00" || seconds !== "00") {
+                    $("#timer").css("background-color", "rgb(251, 18, 47)"); // Paused color
+                }
             }
             // buttonStop.onclick = function () {
             //     clearInterval(interval);
@@ -75,6 +79,7 @@
                 $appendSeconds.html(seconds);
                 // appendTens.innerHTML = tens;
                 // appendSeconds.innerHTML = seconds;
+                $("#timer").css("background-color", "grey"); // Reset color
             }
             // buttonReset.onclick = function () {
             //     clearInterval(interval);
