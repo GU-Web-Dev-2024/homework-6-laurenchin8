@@ -1,0 +1,33 @@
+/* CSS for wrapper, button-container classes, and headings */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    background-image: url('cute_pumpkin.jpg'); /* Use the local pumpkin image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.button-container {
+    /* Button container flex box */
+    display: flex; 
+    justify-content: center;
+}
+
+/* Styling the heading */
+h1 {
+    font-family: 'Cedarville Cursive', cursive;
+    color: #ff8c00; /* Bright orange */
+    text-shadow: 2px 2px 4px #000000; /* Black shadow for effect */
+}
+
+h2 {
+    font-family: 'Cedarville Cursive', cursive;
+    color: #8b4513; /* Saddle brown */
+    text-shadow: 1px 1px 2px #000000;
+}

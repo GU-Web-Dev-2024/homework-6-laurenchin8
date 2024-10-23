@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HW6 - JQuery</title>
+    <link href="style.css" rel="stylesheet">
     <!-- Including JQuery -->
     <script
     src="https://code.jquery.com/jquery-3.7.1.js"
@@ -173,39 +174,6 @@
                     $("#timer").css("opacity", currentOpacity);
                 }, 50); // Adjust the interval for smoother animation
             }
-
-            // CSS for wrapper and .button-container class flex box
-            $(".wrapper").css({
-                "display": "flex",
-                "flex-direction": "column",
-                "align-items": "center", // Center items horizontally
-                "justify-content": "center", // Center items vertically
-                "background-image": "url('cute_pumpkin.jpg')", // Use the local pumpkin image
-                "background-size": "cover",
-                "background-repeat": "no-repeat",
-                "padding": "20px",
-                "border-radius": "10px",
-                "max-width": "600px",
-                "margin": "auto"
-            });
-
-            $(".button-container").css({
-                // Button container flex box
-                "display": "flex", 
-                "justify-content": "center"
-            });
-
-            // Styling the heading
-            $("h1").css({
-                "font-family": "'Cedarville Cursive', cursive",
-                "color": "#ff8c00", // Bright orange
-                "text-shadow": "2px 2px 4px #000000" // Black shadow for effect
-            });
-            $("h2").css({
-                "font-family": "'Cedarville Cursive', cursive",
-                "color": "#8b4513", // Saddle brown
-                "text-shadow": "1px 1px 2px #000000"
-            });
         });
         // }
 
