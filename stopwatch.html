@@ -9,59 +9,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HW6 - JQuery</title>
+    <!-- Including JQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
     <script>
-        window.onload = function () {
+        // window.onload = function () {
+        // changing to use ready() function
+        $(document).ready(function() {
             var seconds = "00";
             var tens = "00";
-            var appendTens = document.getElementById("tens")
-            var appendSeconds = document.getElementById("seconds")
-            var buttonStart = document.getElementById('button-start');
-            var buttonStop = document.getElementById('button-stop');
-            var buttonReset = document.getElementById('button-reset');
+
+            // editing here to make jQuery vars - $() jQuery syntax
+            var $appendTens = $("#tens");
+            var $appendSeconds = $("#seconds")
+            var $buttonStart = $("#button-start");
+            var $buttonStop = $("#button-stop");
+            var $buttonReset = $("#button-reset");
+
             var interval;
 
-            buttonStart.onclick = function () {
+            // changing to use jQuery method
+            $buttonStart.on("click", start);
+
+            function start() {
                 clearInterval(interval);
                 interval = setInterval(startTimer, 10);
             }
+            // buttonStart.onclick = function () {
+            //     clearInterval(interval);
+            //     interval = setInterval(startTimer, 10);
+            // }
 
-            buttonStop.onclick = function () {
+            // changing to use jQuery method
+            $buttonStop.on("click", stop);
+
+            function stop() {
                 clearInterval(interval);
             }
+            // buttonStop.onclick = function () {
+            //     clearInterval(interval);
+            // }
 
-            buttonReset.onclick = function () {
+            // changing to use jQuery method
+            $buttonReset.on("click", reset);
+
+            function reset() {
                 clearInterval(interval);
                 tens = "00";
                 seconds = "00";
-                appendTens.innerHTML = tens;
-                appendSeconds.innerHTML = seconds;
+                $appendTens.html(tens);
+                $appendSeconds.html(seconds);
+                // appendTens.innerHTML = tens;
+                // appendSeconds.innerHTML = seconds;
             }
+            // buttonReset.onclick = function () {
+            //     clearInterval(interval);
+            //     tens = "00";
+            //     seconds = "00";
+            //     appendTens.innerHTML = tens;
+            //     appendSeconds.innerHTML = seconds;
+            // }
 
             function startTimer() {
                 tens++;
 
                 if (tens < 9) {
-                    appendTens.innerHTML = "0" + tens;
+                    // appendTens.innerHTML = "0" + tens;
+                    $appendTens.html("0" + tens);
                 }
 
                 if (tens > 9) {
-                    appendTens.innerHTML = tens;
+                    // appendTens.innerHTML = tens;
+                    $appendTens.html(tens);
 
                 }
 
                 if (tens > 99) {
                     console.log("seconds");
                     seconds++;
-                    appendSeconds.innerHTML = "0" + seconds;
+                    // appendSeconds.innerHTML = "0" + seconds;
+                    $appendSeconds.html("0" + seconds);
                     tens = 0;
-                    appendTens.innerHTML = "0" + 0;
+                    // appendTens.innerHTML = "0" + 0;
+                    $appendTens.html("0" + 0);
                 }
 
                 if (seconds > 9) {
-                    appendSeconds.innerHTML = seconds;
+                    // appendSeconds.innerHTML = seconds;
+                    $appendSeconds.html(seconds);
                 }
             }
-        }
+        });
+        // }
+
     </script>
 </head>
 
